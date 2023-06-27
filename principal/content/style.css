@@ -1,0 +1,311 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Sura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --coresPrimarias1: #CAD2C5;
+    --coresPrimarias2: #84A98C;
+    --coresPrimarias3: #52796F;
+    --coresPrimarias4: #354F52;
+    --coresPrimarias5: #2F3E46;
+    --coresSecundarias1: #e4ebf1;
+    --coresSecundarias2: #82A0BC;
+    --coresSecundarias3: #63ADF2;
+    --coresSecundarias4: #304D6D;
+    --coresSecundarias5: #545E75;
+    --coresTerciarias1: #EEF1EF;
+    --coresTerciarias2: #7D98A1;
+    --coresTerciarias3: #A9B4C2;
+    --coresTerciarias4: #5E6572;
+    --coresTerciarias5: #1C2321;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.body{
+    animation: piscar .7s normal;
+}
+header{
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(120deg,var(--coresPrimarias4),var(--coresPrimarias5));
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    z-index: 9;
+    transition: background .7s;
+}
+.header-fin{
+    background: linear-gradient(120deg,var(--coresSecundarias4),var(--coresSecundarias5 ));
+    transition: background .7s;
+}
+.header-aju{
+    background: linear-gradient(120deg,var(--coresTerciarias4),var(--coresTerciarias5));
+    transition: background .7s;
+}
+.testando{
+    color: green;
+}
+header nav{
+    width: 400px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+nav a{
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Sura', serif;
+    font-size: 1.2em;
+    height: 30px;
+    position: relative;
+    display: inline-block;
+}
+nav a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.5px;
+    background: var(--coresPrimarias2);
+    scale: 0;
+    transform-origin: left;
+    transition: scale .4s;
+}
+nav a:hover::before{
+    scale: 1;
+}
+.header-fin nav a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.5px;
+    background: var(--coresSecundarias2);
+    scale: 0;
+    transform-origin: left;
+    transition: scale .4s;
+}
+.header-fin nav a:hover::before{
+    scale: 1;
+}
+.header-aju nav a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.5px;
+    background: var(--coresTerciarias1);
+    scale: 0;
+    transform-origin: left;
+    transition: scale .4s;
+}
+.header-aju nav a:hover::before{
+    scale: 1;
+}
+aside{
+    width: 250px;
+    height: 100%;
+    background: var(--coresPrimarias1);
+    box-shadow: 0px 5px 10px #0000003c;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    transition: left 1s;
+    z-index: 9;
+}
+.aside-fin{
+    background: #fff;
+}
+.aside-aju{
+    background: var(--coresTerciarias1);
+}
+.hide-aside{
+    left: -250px;
+    transition: left 1s;
+}
+aside ul {
+    width: 100%;
+    height: 100%;
+    padding: 0 0 0 10px;
+    overflow: hidden;
+}
+aside ul h2{
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3em;
+    position: relative;
+    color: var(--coresPrimarias4);
+    text-shadow: 2px 2px 2px #0000002a;
+}
+aside ul h2::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    width: 100%;
+    margin-left: 5px;
+    background: #0000002e;
+}
+.aside-fin h2{
+    color: var(--coresSecundarias4);
+}
+.aside-aju h2{
+    color: var(--coresTerciarias5);
+}
+aside ul li{
+    width: 100%;
+    height: 50px;
+    font-size: 1.2em;
+    color: var(--coresPrimarias5);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    cursor: pointer;
+}
+.aside-fin ul li{
+    color: var(--coresSecundarias4);
+}
+.aside-aju ul li{
+    color: var(--coresTerciarias5);
+}
+aside .btn-exp{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(150deg, var(--coresPrimarias4), var(--coresPrimarias3));
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    right: -25px;
+    top: 40%;
+    border: solid .1px #fff;
+    box-shadow: 3px 3px 7px #0000002a;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: right 1s, transform 1s;
+}
+.aside-fin .btn-exp{
+    background: linear-gradient(150deg, var(--coresSecundarias4), var(--coresSecundarias3));
+}
+.aside-aju .btn-exp{
+    background: linear-gradient(150deg, var(--coresTerciarias4), var(--coresTerciarias5));
+}
+.btn-exp-clicado{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(150deg, var(--coresPrimarias4), var(--coresPrimarias3));
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+    right: -55px;
+    top: 40%;
+    border: solid .1px #fff;
+    box-shadow: 3px 3px 7px #0000002a;
+    cursor: pointer;
+    transform: rotate(180deg);
+    transition: right 1s, transform 1s;
+}
+.aside-fin .btn-exp-clicado{
+    background: linear-gradient(150deg, var(--coresSecundarias4), var(--coresSecundarias3));
+}
+.aside-aju .btn-exp-clicado{
+    background: linear-gradient(150deg, var(--coresTerciarias4), var(--coresTerciarias5));
+}
+main{
+    width: 100%;
+    min-height: 100%;
+    background: #eaeaea;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    transition: width 1s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+main .conteudo{
+    
+    /* margin: 0 auto; */
+    height: 100%;
+    width: 100%;    
+}
+.conteudo .content-text>h2{
+    font-size: 2em;
+    position: relative;
+    width: 100%;
+    font-size: 2.3em;
+    margin-right: 10px;
+    margin: 20px 0;
+    text-shadow: 4px 3px 5px #00000039;
+    max-width: 1500px;
+    min-height: 100%;
+}
+
+.conteudo .content-text>h2:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    width: 100%;
+    margin-left: 5px;
+    background: #0000002e;
+}
+.conteudo .content-text{
+    margin: 0 auto;
+    height: auto;
+    max-width: 1500px;
+    min-height: 100%;
+    padding: 0 30px;
+    margin-top: 50px;
+    overflow: hidden;
+}
+.conteudo p{
+    font-size: 1.3em;
+    text-indent: 20px;
+    text-align: justify;
+    text-shadow: 4px 3px 5px #0000001a;
+}
+section{
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    padding: 40px 4%;
+    color: rgb(20, 20, 20);
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+@keyframes piscar {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

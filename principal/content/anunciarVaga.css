@@ -1,0 +1,49 @@
+
+:root {
+    --coresPrimarias1: #CAD2C5;
+    --coresPrimarias2: #84A98C;
+    --coresPrimarias3: #52796F;
+    --coresPrimarias4: #354F52;
+    --coresPrimarias5: #2F3E46;
+    --coresSecundarias1: #e4ebf1;
+    --coresSecundarias2: #82A0BC;
+    --coresSecundarias3: #63ADF2;
+    --coresSecundarias4: #304D6D;
+    --coresSecundarias5: #545E75;
+    --coresTerciarias1: #EEF1EF;
+    --coresTerciarias2: #7D98A1;
+    --coresTerciarias3: #A9B4C2;
+    --coresTerciarias4: #5E6572;
+    --coresTerciarias5: #1C2321;
+}
+.modal-anunciar-vaga{
+    width: 480px;
+    height: 510px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(120deg, var(--coresTerciarias5), var(--coresPrimarias5));
+    border-radius: 30px;
+    box-shadow: 7px 14px 6px #00000022;
+    transition: width .5s, height .5s;
+    color: #fff;
+}
+.content-anunciar-vaga{
+    width: 100%;
+}
+.content-anunciar-vaga ol{
+    padding-left: 30px;
+    margin-top: 30px;
+}
+
+.content-anunciar-vaga ol li{
+    margin-bottom: 10px;
+}
+
+.content-anunciar-vaga ol li a{
+    color: var(--coresTerciarias1);
+}

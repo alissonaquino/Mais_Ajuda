@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="teste.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="view-vagas">
+        <div class="content-view-vagas" wm-position="1">
+            <p>
+                📢 Encontre o emprego dos seus sonhos! 🌟
+                <br><br>
+                Bem-vindo à nossa área exclusiva, onde as melhores oportunidades profissionais se encontram. Aqui, você
+                poderá explorar uma ampla variedade de vagas de emprego disponíveis, em diferentes setores e níveis de
+                experiência.
+                <br><br>
+                Deseja dar um passo à frente na sua carreira? Não perca mais tempo! Este é o lugar perfeito para você
+                anunciar seu currículo e atrair a atenção das empresas que buscam talentos como você. Nossa plataforma
+                conecta candidatos talentosos com recrutadores ávidos por encontrar profissionais qualificados.
+            </p>
+            <div class="btns-prev-next">
+                <button wm-next="view-vagas-2">Prosseguir</button>
+            </div>
+        </div>
+        <div class="content-view-vagas" wm-position="2">
+            <p>
+                Sabemos o quanto é importante encontrar um emprego que combine com suas habilidades e aspirações.
+                Portanto, estamos comprometidos em fornecer um ambiente onde você possa se destacar e apresentar-se da
+                melhor maneira possível. Deixe seu currículo brilhar e aproveite a oportunidade de impressionar os
+                empregadores em potencial.
+                <br><br>
+                Não deixe suas ambições profissionais em espera! Explore nossas vagas de emprego e seja notado pelas
+                empresas que buscam por alguém como você. Este é o seu momento de brilhar, então não perca essa chance
+                única!
+                <br><br>
+                Prepare-se para alcançar novos horizontes profissionais. Junte-se a nós agora mesmo e coloque sua
+                carreira no caminho do sucesso! 💼🚀
+            </p>
+            <div class="btns-prev-next">
+                <button wm-prev="view-vagas-2">Retornar</button>
+                <button wm-next="view-vagas-3">Prosseguir</button>
+            </div>
+        </div>
+
+        <div class="content-view-vagas tabela-vagas" wm-position="3">
+            <h2>Lista de vagas</h2>
+            <div class="tabela-lista-vagas">
+                <div class="card" wm-id-vaga="1">
+                    <div class="card-details">
+                        <p class="text-title">Analista de desenvolvimento</p>
+                        <p class="text-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi,
+                            accusamus voluptatum est, corrupti ipsa eius nemo cumque doloribus earum laudantium ipsam
+                            quidem rem? Doloribus excepturi in ipsa consequuntur! Omnis, esse.</p>
+                    </div>
+                    <button class="card-button">Me candidatar</button>
+                </div>
+                <div class="card" wm-id-vaga="2">
+                    <div class="card-details">
+                        <p class="text-title">Analista de desenvolvimento</p>
+                        <p class="text-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi,
+                            accusamus voluptatum est, corrupti ipsa eius nemo cumque doloribus earum laudantium ipsam
+                            quidem rem? Doloribus excepturi in ipsa consequuntur! Omnis, esse.</p>
+                    </div>
+                    <button class="card-button">Me candidatar</button>
+                </div>
+                <div class="card" wm-id-vaga="3">
+                    <div class="card-details">
+                        <p class="text-title">Analista de desenvolvimento</p>
+                        <p class="text-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi,
+                            accusamus voluptatum est, corrupti ipsa eius nemo cumque doloribus earum laudantium ipsam
+                            quidem rem? Doloribus excepturi in ipsa consequuntur! Omnis, esse.</p>
+                    </div>
+                    <button class="card-button">Me candidatar</button>
+                </div>
+                <div class="card" wm-id-vaga="3">
+                    <div class="card-details">
+                        <p class="text-title">Analista de desenvolvimento</p>
+                        <p class="text-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi,
+                            accusamus voluptatum est, corrupti ipsa eius nemo cumque doloribus earum laudantium ipsam
+                            quidem rem? Doloribus excepturi in ipsa consequuntur! Omnis, esse.</p>
+                    </div>
+                    <button class="card-button">Me candidatar</button>
+                </div>
+            </div>
+            <div class="btns-prev-next">
+                <button wm-prev="view-vagas-3">Retornar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('[wm-next]').forEach(link => {
+            link.onclick = function () {
+                let classe = this.getAttribute('wm-next')
+
+                document.querySelector('.view-vagas').classList.toggle(classe)
+            }
+        })
+
+        document.querySelectorAll('[wm-prev]').forEach(link => {
+            link.onclick = function () {
+                let classe = this.getAttribute('wm-prev')
+
+                document.querySelector('.view-vagas').classList.toggle(classe)
+            }
+        })
+
+
+        document.querySelectorAll('.card-button').forEach(card => {
+            card.onclick = function () {
+                console.log(this)
+                let id = this.parentElement.getAttribute('wm-id-vaga')
+                alert(id)
+            }
+        })
+
+
+        fetch('PHP/teste.php?action=get_user', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+    }
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data);
+})
+.catch(error => {
+    console.error('Erro:', error);
+});
+
+
+    </script>
+
+
+
+</body>
+
+</html>

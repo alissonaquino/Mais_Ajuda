@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --coresPrimarias1: #CAD2C5;
+    --coresPrimarias2: #84A98C;
+    --coresPrimarias3: #52796F;
+    --coresPrimarias4: #354F52;
+    --coresPrimarias5: #2F3E46;
+    --coresSecundarias1: #e4ebf1;
+    --coresSecundarias2: #82A0BC;
+    --coresSecundarias3: #63ADF2;
+    --coresSecundarias4: #304D6D;
+    --coresSecundarias5: #545E75;
+    --coresTerciarias1: #EEF1EF;
+    --coresTerciarias2: #7D98A1;
+    --coresTerciarias3: #A9B4C2;
+    --coresTerciarias4: #5E6572;
+    --coresTerciarias5: #1C2321;
+}
+
+body {
+    background: linear-gradient(120deg, var(--coresPrimarias3), var(--coresPrimarias2), var(--coresPrimarias1));
+    overflow-x: hidden;
+}
+
+header{
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(120deg,var(--coresPrimarias4),var(--coresPrimarias5));
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 9;
+    transition: background .7s;
+}
+header nav{
+    width: 400px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+nav a{
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Sura', serif;
+    font-size: 1.2em;
+    height: 30px;
+    position: relative;
+    display: inline-block;
+}
+nav a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1.5px;
+    background: var(--coresPrimarias2);
+    scale: 0;
+    transform-origin: left;
+    transition: scale .4s;
+}
+nav a:hover::before{
+    scale: 1;
+}
+
+body>h1{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    color: #ecf0e9;
+    text-shadow: 2px 2px 2px #0000003f;
+    padding-left: 20px;
+}
+
+body>h1::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    width: 100%;
+    margin-left: 10px;
+    background-color: #ffffffc9;
+}
+
+.contato-inicial-div {
+    width: 550px;
+    height: 40%;
+    background-color: var(--coresPrimarias4);
+    margin: 50 auto;
+    padding-top: 10px;
+    border-radius: 4%;
+    box-shadow: 5px 5px 5px #0000003f;
+}
+
+.contato-div {
+    width: 550px;
+    height: 300px;
+    background-color: var(--coresPrimarias4);
+    padding: 10;
+    margin: auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #0000003f;
+    overflow: hidden;
+    transition: width .5s, height .5s, border-radius .5s;
+}
+
+.contato-div .mensagem-contato-div, .contato-div .conteudo-contato-div {
+    width: 100%;
+}
+
+.contato-div .mensagem-contato-div {
+    display: flex;
+    flex-direction: column;
+    padding: 25;
+}
+
+.contato-div .mensagem-contato-div h2 {
+    font-size: 2em;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    color: #ecf0e9;
+    text-shadow: 2px 2px 2px #0000003f;
+}
+
+.contato-div .mensagem-contato-div h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    width: 100%;
+    margin-left: 10px;
+    background: #ffffffc9;
+}
+
+.contato-div .mensagem-contato-div p{
+    font-size: 1.5em;
+    color: #ecf0e9;
+    text-align: justify;
+    margin: 35px 0;
+}
+
+.contato-div .conteudo-contato-div {
+    display: none;
+}
+
+.contato-div-aux {
+    width: 570px;
+    height: 475px;
+    border-radius: 30px;
+    transition: width .5s, height .5s, border-radius .5s;
+}
+
+.contato-div-aux .mensagem-contato-div {
+    display: none;
+}
+
+.contato-div-aux .conteudo-contato-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+}
+
+h2 {
+    width: 100%;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    position: relative;
+    color: #ecf0e9;
+    text-shadow: 2px 2px 2px #0000003f;
+}
+
+input {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 35px;
+    padding: 1px 12px;
+    border-radius: 12px;
+    border: 1.5px solid lightgrey;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 3px 4px 10px #00000029;
+    margin-bottom: 20px;
+}
+
+input:hover {
+    border: 2px solid lightgrey;
+    box-shadow: 0px 0px 20px -17px;
+}
+
+textarea {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+    padding: 10 10 0 10;
+    position: relative;
+    width: 100%;
+    height: 150px;
+    border-color: white;
+    box-shadow: 2px 2px 2px #0000003f;
+    resize: none;
+    outline: none;
+    border-radius: 12px;
+    border: 1.5px solid lightgrey;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+textarea:hover {
+    border: 2px solid lightgrey;
+    box-shadow: 0px 0px 20px -17px;
+}
+
+.btn-contato{
+    width: 100%;
+    height: 40px;
+    margin: auto;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--coresPrimarias1);
+    color: var(--coresPrimarias5);
+    box-shadow: 3px 3px 6px #bfbfbf23;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 553px) {
+    .contato-div {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    .contato-div .conteudo-contato-div {
+        width: 100%;
+    }
+}
+
+button {
+    width: 100%;
+    font-family: inherit;
+    font-size: 20px;
+    background-color: var(--coresPrimarias2);
+    color: white;
+    padding: 0.7em 1em;
+    padding-left: 0.9em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+  
+  button span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  button:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+  
+  button:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  }
+  
+  button:hover span {
+    transform: translateX(15em);
+  }
+  
+  button:active {
+    transform: scale(0.95);
+  }
+  
+  @keyframes fly-1 {
+    from {
+      transform: translateY(0.1em);
+    }
+  
+    to {
+      transform: translateY(-0.1em);
+    }
+  }
